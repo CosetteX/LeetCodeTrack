@@ -16,7 +16,20 @@ class Solution {
         for (int i=0;i<n;i++){
             int idx=magazine.charAt(i)-'a';
             cnt[idx]++;
+
         }
+
+        int m=ransomNote.length();
+        for (int i=0;i<m;i++){
+            int idx=ransomNote.charAt(i)-'a';
+            cnt[idx]--;
+
+            if (cnt[idx]<0){
+
+                return false;
+            }
+        }
+        return true;
         
     }
 }
